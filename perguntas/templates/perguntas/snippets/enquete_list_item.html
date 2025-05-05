@@ -1,0 +1,8 @@
+<li>
+    <a href="{% url 'responder_enquete' enquete.id %}">{{ enquete.titulo }}</a>
+    {% if enquete.encerrada %}
+        <span style="color: red;">(Encerrada)</span>
+    {% endif %}
+    (Criada em: {{ enquete.data_criacao|date:"d/m/Y" }}) - {{ enquete.descricao|truncatewords:10 }}
+    <a href="{% url 'exibir_resultados' enquete.id %}">Ver Resultados</a>
+</li>

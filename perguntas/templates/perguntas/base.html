@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Enquetes para Programadores{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'perguntas/style.css' %}">
+    </head>
+<body>
+    <div class="container">
+{% block content %}
+    <h1>Bem-vindo!</h1>
+    <p>Explore as enquetes e participe da nossa comunidade.</p>
+
+    <form class="form-inline mt-4">
+        <div class="form-group mr-2">
+            <label for="search" class="mr-2">Pesquisar:</label>
+            <input type="text" class="form-control" id="search" placeholder="Digite sua busca">
+        </div>
+        <button type="submit" class="btn btn-outline-success">Buscar</button>
+    </form>
+
+    <hr class="my-4">
+    <p>Links para as funcionalidades:</p>
+    <ul class="list-unstyled">
+        <li><a href="{% url 'enquetes/gerenciar_enquetes' %}" class="btn btn-link">Ver Enquetes</a></li>
+        <li><a href="{% url 'usuarios/gerenciar' %}" class="btn btn-link">Registrar Aluno</a></li>
+        <li><a href="{% url 'areas/listar_areas_interesse' %}" class="btn btn-link">Áreas de Interesse</a></li>
+        <li><a href="{% url 'admin_criar_enquete' %}" class="btn btn-link">Criar Enquete (Admin)</a></li>
+    </ul>
+{% endblock %}
+</div>
+</body>
+</html>
